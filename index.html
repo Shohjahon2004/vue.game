@@ -1,0 +1,48 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+            <div class="form">
+                <input class="input" type="text" v-model="text">
+            <select v-model="category">
+                <option>RUST</option>
+                <option>DOTA</option>
+                <option>CSGO</option>
+            </select>
+             <button class="btn" @click="add">добавить игрока</button>
+            </div>
+        <div class="categories">
+            <div class="category__item">
+                <h2>CSGO</h2>
+                <div class="category_csgo" v-for="player in players.CSGO" :key="player">
+                    <p>{{ player }}</p>
+                </div>
+            </div>
+            <div class="category__item">
+                <h2>DOTA</h2>
+                <div class="category_dota" v-for="player in players.DOTA" :key="player">
+                    <p>{{ player }}</p>
+                </div>
+            </div>
+            <div class="category__item">
+                <h2>RUST</h2>
+                <div class="category_rust" v-for="player in players.RUST" :key="player">
+                    <p>{{ player }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="main.js"></script>
+</body>
+</html>
